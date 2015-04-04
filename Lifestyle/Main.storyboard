@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -199,6 +200,7 @@
                     <connections>
                         <segue destination="vg5-Oz-zTK" kind="relationship" relationship="viewControllers" id="Jwy-9l-guX"/>
                         <segue destination="lBB-VV-2hv" kind="relationship" relationship="viewControllers" id="tSz-MM-aTg"/>
+                        <segue destination="pgU-w4-9lN" kind="relationship" relationship="viewControllers" id="7G2-Pj-Jv8"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aJI-0f-Ifb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -227,10 +229,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Participants List" id="VH1-QV-odG">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="yxO-GE-kpw">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="fta-61-IOl">
                             <connections>
-                                <action selector="addNewMember:" destination="DIM-v6-7YM" id="nkG-bW-Hef"/>
-                                <segue destination="Eeg-0C-YcX" kind="modal" id="uV7-5a-ZfJ"/>
+                                <segue destination="Eeg-0C-YcX" kind="modal" id="YR2-yN-VA5"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -242,7 +243,7 @@
         <!--Add New Member-->
         <scene sceneID="0oV-Cz-lkA">
             <objects>
-                <viewController id="Eeg-0C-YcX" customClass="PartyNewMemberViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PartyNewMemberViewController" id="Eeg-0C-YcX" customClass="PartyNewMemberViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bXV-sr-SHc"/>
                         <viewControllerLayoutGuide type="bottom" id="dYw-lz-LSE"/>
@@ -310,6 +311,50 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PaS-n1-xKH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2040" y="1679"/>
+        </scene>
+        <!--Bingo-->
+        <scene sceneID="14f-D2-KKL">
+            <objects>
+                <viewController id="pgU-w4-9lN" customClass="bingoViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Q9G-WZ-IDH"/>
+                        <viewControllerLayoutGuide type="bottom" id="hoH-wK-wgh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="r65-qj-2dX">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="eight-ball" translatesAutoresizingMaskIntoConstraints="NO" id="bhT-Ll-HNT">
+                                <rect key="frame" x="0.0" y="124" width="320" height="320"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Shake For Chance" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="T7Y-FR-PQk">
+                                <rect key="frame" x="100" y="234" width="120" height="100"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="T7Y-FR-PQk" firstAttribute="leading" secondItem="r65-qj-2dX" secondAttribute="leadingMargin" constant="84" id="0X2-6j-fqZ"/>
+                            <constraint firstAttribute="trailing" secondItem="bhT-Ll-HNT" secondAttribute="trailing" id="2qF-Tj-rP0"/>
+                            <constraint firstItem="T7Y-FR-PQk" firstAttribute="centerY" secondItem="bhT-Ll-HNT" secondAttribute="centerY" id="CGB-z1-IrE"/>
+                            <constraint firstItem="bhT-Ll-HNT" firstAttribute="leading" secondItem="r65-qj-2dX" secondAttribute="leading" id="GQR-qu-Q7x"/>
+                            <constraint firstItem="hoH-wK-wgh" firstAttribute="top" secondItem="T7Y-FR-PQk" secondAttribute="bottom" constant="185" id="Wx7-t2-HX4"/>
+                            <constraint firstItem="bhT-Ll-HNT" firstAttribute="centerY" secondItem="r65-qj-2dX" secondAttribute="centerY" id="gaa-lY-tZr"/>
+                            <constraint firstItem="T7Y-FR-PQk" firstAttribute="centerX" secondItem="bhT-Ll-HNT" secondAttribute="centerX" id="jtm-fG-9rd"/>
+                            <constraint firstItem="hoH-wK-wgh" firstAttribute="top" secondItem="bhT-Ll-HNT" secondAttribute="bottom" constant="75" id="pLw-Jf-F9o"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Bingo" image="eight-ball－20" id="6zf-XS-pCI"/>
+                    <connections>
+                        <outlet property="getChance" destination="T7Y-FR-PQk" id="WZp-bo-xAp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0XU-di-3nV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2040" y="2357"/>
         </scene>
         <!--Create a Party Event-->
         <scene sceneID="x1V-Fq-tah">
@@ -438,6 +483,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="eight-ball" width="320" height="320"/>
+        <image name="eight-ball－20" width="20" height="20"/>
         <image name="tab-chars" width="30" height="30"/>
         <image name="tab-info" width="30" height="30"/>
     </resources>

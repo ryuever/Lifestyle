@@ -24,6 +24,7 @@
 		4261D2291AC72B03000DC4E6 /* PartyMembersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4261D2221AC72B03000DC4E6 /* PartyMembersViewController.m */; };
 		4261D22E1AC78F5E000DC4E6 /* PartyTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4261D22D1AC78F5E000DC4E6 /* PartyTabBarViewController.m */; };
 		4261D2311AC7E339000DC4E6 /* PartyNewMemberViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4261D2301AC7E339000DC4E6 /* PartyNewMemberViewController.m */; };
+		42AA028B1AD00F6B00A00864 /* bingoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42AA028A1AD00F6B00A00864 /* bingoViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,8 @@
 		4261D22D1AC78F5E000DC4E6 /* PartyTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PartyTabBarViewController.m; sourceTree = "<group>"; };
 		4261D22F1AC7E339000DC4E6 /* PartyNewMemberViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PartyNewMemberViewController.h; sourceTree = "<group>"; };
 		4261D2301AC7E339000DC4E6 /* PartyNewMemberViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PartyNewMemberViewController.m; sourceTree = "<group>"; };
+		42AA02891AD00F6B00A00864 /* bingoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bingoViewController.h; sourceTree = "<group>"; };
+		42AA028A1AD00F6B00A00864 /* bingoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = bingoViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +138,8 @@
 				4261D22D1AC78F5E000DC4E6 /* PartyTabBarViewController.m */,
 				4261D22F1AC7E339000DC4E6 /* PartyNewMemberViewController.h */,
 				4261D2301AC7E339000DC4E6 /* PartyNewMemberViewController.m */,
+				42AA02891AD00F6B00A00864 /* bingoViewController.h */,
+				42AA028A1AD00F6B00A00864 /* bingoViewController.m */,
 			);
 			path = Lifestyle;
 			sourceTree = "<group>";
@@ -266,6 +271,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42AA028B1AD00F6B00A00864 /* bingoViewController.m in Sources */,
 				4261D1F31AC72AAC000DC4E6 /* AppDelegate.m in Sources */,
 				4261D2251AC72B03000DC4E6 /* PartiesMasterViewController.m in Sources */,
 				4261D2311AC7E339000DC4E6 /* PartyNewMemberViewController.m in Sources */,
