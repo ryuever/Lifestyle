@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>8DB58F44-1FAE-44A3-BE64-C5E09EDAD545</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Lifestyle</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>3FFC9CC8DE08EB3D3650027082BC104785FC37EC</key>
+		<string>https://github.com/ryuever/Lifestyle.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Lifestyle.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>3FFC9CC8DE08EB3D3650027082BC104785FC37EC</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/ryuever/Lifestyle.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>3FFC9CC8DE08EB3D3650027082BC104785FC37EC</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>3FFC9CC8DE08EB3D3650027082BC104785FC37EC</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Lifestyle</string>
+		</dict>
+	</array>
+</dict>
+</plist>

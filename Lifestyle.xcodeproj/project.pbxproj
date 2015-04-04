@@ -22,7 +22,6 @@
 		4261D2271AC72B03000DC4E6 /* Party.m in Sources */ = {isa = PBXBuildFile; fileRef = 4261D21E1AC72B03000DC4E6 /* Party.m */; };
 		4261D2281AC72B03000DC4E6 /* PartyInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4261D2201AC72B03000DC4E6 /* PartyInfoViewController.m */; };
 		4261D2291AC72B03000DC4E6 /* PartyMembersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4261D2221AC72B03000DC4E6 /* PartyMembersViewController.m */; };
-		4261D22B1AC72B60000DC4E6 /* icon-120.png in Resources */ = {isa = PBXBuildFile; fileRef = 4261D22A1AC72B60000DC4E6 /* icon-120.png */; };
 		4261D22E1AC78F5E000DC4E6 /* PartyTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4261D22D1AC78F5E000DC4E6 /* PartyTabBarViewController.m */; };
 		4261D2311AC7E339000DC4E6 /* PartyNewMemberViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4261D2301AC7E339000DC4E6 /* PartyNewMemberViewController.m */; };
 /* End PBXBuildFile section */
@@ -65,7 +64,6 @@
 		4261D2201AC72B03000DC4E6 /* PartyInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PartyInfoViewController.m; sourceTree = "<group>"; };
 		4261D2211AC72B03000DC4E6 /* PartyMembersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PartyMembersViewController.h; sourceTree = "<group>"; };
 		4261D2221AC72B03000DC4E6 /* PartyMembersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PartyMembersViewController.m; sourceTree = "<group>"; };
-		4261D22A1AC72B60000DC4E6 /* icon-120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-120.png"; sourceTree = "<group>"; };
 		4261D22C1AC78F5E000DC4E6 /* PartyTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PartyTabBarViewController.h; sourceTree = "<group>"; };
 		4261D22D1AC78F5E000DC4E6 /* PartyTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PartyTabBarViewController.m; sourceTree = "<group>"; };
 		4261D22F1AC7E339000DC4E6 /* PartyNewMemberViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PartyNewMemberViewController.h; sourceTree = "<group>"; };
@@ -144,7 +142,6 @@
 		4261D1ED1AC72AAC000DC4E6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				4261D22A1AC72B60000DC4E6 /* icon-120.png */,
 				4261D1EE1AC72AAC000DC4E6 /* Info.plist */,
 				4261D1EF1AC72AAC000DC4E6 /* main.m */,
 			);
@@ -252,7 +249,6 @@
 				4261D2011AC72AAC000DC4E6 /* LaunchScreen.xib in Resources */,
 				4261D1FE1AC72AAC000DC4E6 /* Images.xcassets in Resources */,
 				4261D2231AC72B03000DC4E6 /* Main.storyboard in Resources */,
-				4261D22B1AC72B60000DC4E6 /* icon-120.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -472,6 +468,7 @@
 				4261D2121AC72AAD000DC4E6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4261D2131AC72AAD000DC4E6 /* Build configuration list for PBXNativeTarget "LifestyleTests" */ = {
 			isa = XCConfigurationList;
@@ -480,6 +477,7 @@
 				4261D2151AC72AAD000DC4E6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

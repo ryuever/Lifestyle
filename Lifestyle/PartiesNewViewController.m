@@ -92,6 +92,7 @@
     [newParty setValue:self.descriptionField.text forKey:@"partyDescription"];
     [newParty setValue:self.dateField.text forKey:@"date"];
     [newParty setValue:self.locationField.text forKey:@"location"];
+    [newParty setValue:@"3000" forKey:@"totalCost"];
     [newParty setValue:arrayData forKey:@"members"];
  
     NSError *error = nil;

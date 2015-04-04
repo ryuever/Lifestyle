@@ -11,30 +11,66 @@
 #import "PartyTabBarViewController.h"
 
 @interface PartyInfoViewController ()
-
+{
+    NSMutableArray* membersList;
+}
 @end
 
 @implementation PartyInfoViewController
-// @synthesize label;
+- (void)awakeFromNib {
+
+    NSLog(@"in party info");
+    [[NSNotificationCenter defaultCenter]
+     addObserver:self
+     selector:@selector(addNewMemberFinishedNotification:)
+     name:kAddNewMemberFinishedNotification
+     object:nil];
+    
+    [super awakeFromNib];
+}
+
+- (void)addNewMemberFinishedNotification:(NSNotification*)notification
+{
+    NSLog(@"new member is added");
+    [self viewDidLoad];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     PartyTabBarViewController *tabBar = (PartyTabBarViewController *)self.tabBarController;
-//    NSLog(@"%@", tabBar.labelString);
-//    label.text = [NSString stringWithFormat:@"Tab %lu: %@",(unsigned long)[tabBar.viewControllers indexOfObject:self],tabBar.labelString];
-//    NSLog(@"%@", label.text)
     if (tabBar.partyItem) {
-//        NSLog(@"from info view controller : %@", [tabBar.selectedParty date]);
-//        self.partyDescription.text = [tabBar.selectedParty partyDescription];
-//        self.location.text = [tabBar.selectedParty location];
-//        self.date.text = [tabBar.selectedParty date];
-        
         NSLog(@"from info view controller : %@", [(Party *)tabBar.partyItem date]);
         self.partyDescription.text = [(Party *)tabBar.partyItem partyDescription];
         self.location.text = [(Party *)tabBar.partyItem location];
         self.date.text = [(Party *)tabBar.partyItem date];
+        self.totalCost.text = [(Party *)tabBar.partyItem totalCost];
+        // membersList = [(Party *)tabBar.partyItem members];
+        
+        // disable text field
+        self.partyDescription.enabled = NO;
+        self.totalCost.enabled = NO;
+        self.date.enabled = NO;
+        self.location.enabled = NO;
+        
+        membersList = [NSKeyedUnarchiver unarchiveObjectWithData:(NSData *)[(Party *)tabBar.partyItem members]];
+        
+        NSLog(@"total cost is %@", self.totalCost.text);
+        NSLog(@"Length of member list is %lu", (unsigned long)[membersList count]);
+        NSInteger tc = [self.totalCost.text integerValue];
+        NSLog(@"tc is %ld", tc);
+        NSInteger aveCost = tc / [membersList count];
+        if (tc == 0) {
+            self.averageCost.text = @"#";
+        }else{
+            self.averageCost.text = [@(aveCost) stringValue];
+        }
     }
+    UIBarButtonItem *editButton = [[UIBarButtonItem alloc]
+                                  initWithBarButtonSystemItem:UIBarButtonSystemItemEdit
+                                  target:self action:@selector(editInfo:)];
+    self.navigationItem.rightBarButtonItem = editButton;
+
  }
 
 - (void)didReceiveMemoryWarning {
@@ -58,4 +94,41 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 
 }
+
+- (NSManagedObjectContext *)managedObjectContext {
+    NSManagedObjectContext *context = nil;
+    id delegate = [[UIApplication sharedApplication] delegate];
+    if ([delegate performSelector:@selector(managedObjectContext)]) {
+        context = [delegate managedObjectContext];
+    }
+    return context;
+}
+
+- (IBAction)editInfo:(id)sender {
+    
+    UIBarButtonItem *doneButton = [[UIBarButtonItem alloc]
+                                   initWithBarButtonSystemItem:UIBarButtonSystemItemDone
+                                   target:self action:@selector(finishEditInfo:)];
+    self.navigationItem.rightBarButtonItem = doneButton;
+    
+    self.totalCost.enabled = YES;
+    
+}
+
+- (IBAction)finishEditInfo:(id)send{
+    NSManagedObjectContext *context = [self managedObjectContext];
+    PartyTabBarViewController *tabBar = (PartyTabBarViewController *)self.tabBarController;
+    [tabBar.partyItem setValue:self.totalCost.text forKey:@"totalCost"];
+    NSError *error = nil;
+    if (![context save:&error]) {
+        NSLog(@"Can't Delete! %@ %@", error, [error localizedDescription]);
+        return;
+    }
+    UIBarButtonItem *editButton = [[UIBarButtonItem alloc]
+                                   initWithBarButtonSystemItem:UIBarButtonSystemItemEdit
+                                   target:self action:@selector(editInfo:)];
+    self.navigationItem.rightBarButtonItem = editButton;
+    [self viewDidLoad];
+}
+
 @end

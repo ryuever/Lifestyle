@@ -41,25 +41,17 @@
 - (IBAction)save:(id)sender {
     NSManagedObjectContext *context = [self managedObjectContext];
     NSLog(@"memberList is %@", self.partyNewMember);
-//    membersList = [NSKeyedUnarchiver unarchiveObjectWithData:[(Party *)tabBar.partyItem members]];
-//    NSLog(@"memberField.text is : %@", self.memberField.text);
-//    NSLog(@"before insert membersList : %@", membersList);
     [self.partyNewMember addObject:self.memberField.text];
-    //[self.partyNewMember insertObject:self.memberField.text atIndex:0];
     NSLog(@"membersList is %@", self.partyNewMember);
-//    NSLog(@"after insert membersList : %@", membersList);
-    // NSMutableArray * member2 = [NSMutableArray arrayWithArray:@[@"lifdffu", @"mmmmm"]];
 
     NSData *arrayData = [NSKeyedArchiver archivedDataWithRootObject:self.partyNewMember];
-    // NSData *arrayData = [NSKeyedArchiver archivedDataWithRootObject:member2];
     [self.partyNewItem setValue:arrayData forKey:@"members"];
-//        
     NSError *error = nil;
     if (![context save:&error]) {
         NSLog(@"Can't Delete! %@ %@", error, [error localizedDescription]);
         return;
     }
-        
+    [[NSNotificationCenter defaultCenter] postNotificationName:kAddNewMemberFinishedNotification object:self];
     // Remove device from table view
     [self dismissViewControllerAnimated:YES completion:nil];
 }

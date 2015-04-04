@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#define kAddNewMemberFinishedNotification      @"AddNewMemberFinished"
 
 @interface PartyInfoViewController : UIViewController
 
@@ -14,6 +15,9 @@
 @property (strong, nonatomic) IBOutlet UITextField *location;
 @property (strong, nonatomic) IBOutlet UITextField *totalCost;
 @property (strong, nonatomic) IBOutlet UITextField *date;
+@property (strong, nonatomic) IBOutlet UILabel *averageCost;
 
 - (IBAction)back:(id)sender;
+- (IBAction)editInfo:(id)sender;
+- (IBAction)finishEditInfo:(id)send;
 @end

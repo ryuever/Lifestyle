@@ -171,6 +171,8 @@
         PartyTabBarViewController *tabBar = [segue destinationViewController];
         tabBar.selectedParty = (Party *)[self.partiesList objectAtIndex:self.tableView.indexPathForSelectedRow.row];
         tabBar.partyItem = [self.partiesList objectAtIndex:self.tableView.indexPathForSelectedRow.row];
+        NSLog(@"partiesList in PartiesMasterViewController %@", self.partiesList);
+        NSLog(@"partyItem in PartiesMasterViewController %@", [self.partiesList objectAtIndex:self.tableView.indexPathForSelectedRow.row]);
 //        NSLog(@"selected item : %@", [(Party *)[self.partiesList objectAtIndex:self.tableView.indexPathForSelectedRow.row] date]);
         NSLog(@"%@", self.partiesList);
 //        NSLog(@"selectedParty : %@", [tabBar.selectedParty date]);

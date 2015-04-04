@@ -10,6 +10,9 @@
 #define kWhatsitDidChangeNotification		@"MyWhatsitDidChange"
 #define kAddNewParticipantFinishedNotification      @"AddNewParticipantFinished"
 
+
+
+
 @interface Party : NSObject
 
 // cant use description as property

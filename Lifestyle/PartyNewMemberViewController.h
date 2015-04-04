@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
+#define kAddNewMemberFinishedNotification      @"AddNewMemberFinished"
 
 @interface PartyNewMemberViewController : UIViewController
 @property (strong, nonatomic) IBOutlet UITextField *memberField;
