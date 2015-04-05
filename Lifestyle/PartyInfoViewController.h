@@ -20,4 +20,5 @@
 - (IBAction)back:(id)sender;
 - (IBAction)editInfo:(id)sender;
 - (IBAction)finishEditInfo:(id)send;
+- (IBAction)dismissKeyboard:(id)sender;
 @end

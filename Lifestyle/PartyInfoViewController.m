@@ -131,4 +131,8 @@
     [self viewDidLoad];
 }
 
+- (IBAction)dismissKeyboard:(id)sender {
+    [self.view endEditing:NO];
+}
+
 @end
