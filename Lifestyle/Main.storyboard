@@ -236,13 +236,7 @@
                             <outlet property="delegate" destination="DIM-v6-7YM" id="Ar2-bD-w5b"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Participants List" id="VH1-QV-odG">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="fta-61-IOl">
-                            <connections>
-                                <segue destination="Eeg-0C-YcX" kind="modal" id="YR2-yN-VA5"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Participants List" id="VH1-QV-odG"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GXc-4z-UAR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -336,14 +330,14 @@
                                 <rect key="frame" x="0.0" y="124" width="320" height="320"/>
                                 <gestureRecognizers/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tap for chance" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OLL-FV-BE9">
-                                <rect key="frame" x="89" y="273" width="141" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tap for chance" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dtj-zZ-fRa">
+                                <rect key="frame" x="87" y="273" width="146" height="21"/>
                                 <gestureRecognizers/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                                 <connections>
-                                    <outletCollection property="gestureRecognizers" destination="ect-EH-oKI" appends="YES" id="TGT-7m-xxx"/>
+                                    <outletCollection property="gestureRecognizers" destination="ikU-dR-R2y" appends="YES" id="WDT-Uz-Z6E"/>
                                 </connections>
                             </label>
                         </subviews>
@@ -357,13 +351,13 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Bingo" image="eight-ball－20" id="6zf-XS-pCI"/>
                     <connections>
-                        <outlet property="getChance" destination="OLL-FV-BE9" id="hJj-q7-THj"/>
+                        <outlet property="getChance" destination="Dtj-zZ-fRa" id="6kp-O7-ESO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0XU-di-3nV" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="ect-EH-oKI">
+                <tapGestureRecognizer id="ikU-dR-R2y">
                     <connections>
-                        <action selector="touchForChange:" destination="pgU-w4-9lN" id="jCJ-dk-bdz"/>
+                        <action selector="touchForChange:" destination="pgU-w4-9lN" id="VIC-eV-Kyz"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>

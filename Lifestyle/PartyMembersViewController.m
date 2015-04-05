@@ -8,7 +8,6 @@
 
 #import "PartyMembersViewController.h"
 #import "PartyTabBarViewController.h"
-#import "PartyNewMemberViewController.h"
 #import <CoreData/CoreData.h>
 #import <CoreData/NSFetchRequest.h>
 
@@ -36,6 +35,12 @@
                                       action:@selector(backToPartiesList:)];
     self.navigationItem.leftBarButtonItem = customBarItem;
 
+    UIBarButtonItem *addMemberBarItem = [[UIBarButtonItem alloc]
+                                         initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
+                                         target:self
+                                         action:@selector(insertNewMember:)];
+    self.navigationItem.rightBarButtonItem = addMemberBarItem;
+    
     // when poped up it will be under Editing mode
     // [self.tableView setEditing:YES animated:YES];
 }
@@ -138,14 +143,6 @@ didSelectRowAtIndexPath:(NSIndexPath *)newIndexPath {
     }
 }
 
-//- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-//    NSLog(@"can remove");
-//    if (indexPath.row == 0) // Don't move the first row
-//        return NO;
-//    
-//    return YES;
-//}
-
 // implement movable operation
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:
                     (NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath
@@ -209,8 +206,58 @@ didSelectRowAtIndexPath:(NSIndexPath *)newIndexPath {
 //    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
 //    
     // dynamically add an item
-    
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"What do you want to do with the file?"
+                                                             delegate:self
+                                                    cancelButtonTitle:@"Cancel"
+                                               destructiveButtonTitle:nil
+                                                    otherButtonTitles:@"Add a member", @"Add from contact", nil];
+    [actionSheet showInView:self.view];
 }
+
+-(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
+    
+    switch (buttonIndex) {
+        case 0:
+        {
+            NSLog(@"Add a new member");
+            //[self performSegueWithIdentifier:@"addNewMember" sender:self];
+
+//            PartyNewMemberViewController *createUserController = [[PartyNewMemberViewController alloc] init];
+//            // createUserController.delegate = self;
+//            [self presentViewController:createUserController animated:YES completion:nil];
+            
+            // createUserController.delegate = self;
+            // [self presentViewController:createUserController animated:YES completion:nil];
+            UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main"
+                                                                 bundle:nil];
+            PartyNewMemberViewController *add =
+            [storyboard instantiateViewControllerWithIdentifier:@"PartyNewMemberViewController"];
+            
+            [self presentViewController:add
+                               animated:YES
+                             completion:nil];
+            PartyTabBarViewController *tabBar = (PartyTabBarViewController *)self.tabBarController;
+            
+            NSLog(@"in prepare for segue from party members list");
+            // PartyNewMemberViewController *pnvc = [segue destinationViewController];
+            NSLog(@"membersList is %@", membersList);
+            //[pnvc.partyNewMember addObjectsFromArray:membersList];
+            // pnvc.partyNewMember = [[NSMutableArray alloc] initWithObjects:membersList, nil];
+            add.partyNewMember = membersList;
+            add.partyNewItem = tabBar.partyItem;
+            break;
+        }
+        case 1:
+            NSLog(@"second condition : add from contact");
+            break;
+            
+        default:
+            break;
+    }
+    
+    NSLog(@"Index = %lu - Title = %@", buttonIndex, [actionSheet buttonTitleAtIndex:buttonIndex]);
+}
+
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
 //    if ([[segue identifier] isEqualToString:@"partyNewMember"]){
@@ -225,12 +272,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)newIndexPath {
     pnvc.partyNewItem = tabBar.partyItem;
 //        NSLog(@"pnvc partyNewMember is %@", pnvc.partyNewMember);
     NSLog(@"pnvc is %@", pnvc.partyNewMember);
-
-
-        //        [tabBar setLabelString:[NSString stringWithFormat:@"This has been set"]];
-        //        // initWithDescription:(NSString*)partyDescription date:(NSString*)date totalCost:(NSString*)totalCost members:(NSMutableArray*)members
-        
-  //  }
+// }
 }
 
 - (IBAction)backToPartiesList:(id)sender {

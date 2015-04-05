@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "PartyNewMemberViewController.h"
 @interface PartyMembersViewController : UITableViewController
 - (IBAction)backToPartiesList:(id)sender;
 - (IBAction)addNewMember:(id)sender;

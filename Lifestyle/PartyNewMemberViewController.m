@@ -39,6 +39,7 @@
 }
 
 - (IBAction)save:(id)sender {
+    NSLog(@"save a new member in PartyNewMemberViewController");
     NSManagedObjectContext *context = [self managedObjectContext];
     NSLog(@"memberList is %@", self.partyNewMember);
     [self.partyNewMember addObject:self.memberField.text];
