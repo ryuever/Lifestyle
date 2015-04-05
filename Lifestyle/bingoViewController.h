@@ -10,6 +10,8 @@
 #import "PartyTabBarViewController.h"
 
 @interface bingoViewController : UIViewController
-@property (strong, nonatomic) IBOutlet UITextView *getChance;
+// @property (strong, nonatomic) IBOutlet UITextView *getChance;
+@property (strong, nonatomic) IBOutlet UILabel *getChance;
+- (IBAction)touchForChange:(id)sender;
 
 @end

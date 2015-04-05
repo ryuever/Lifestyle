@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -165,6 +164,10 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="QFq-bD-9Hn" appends="YES" id="4eB-Pg-50G"/>
+                        </connections>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="vIn-MC-4lE">
@@ -184,6 +187,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KdD-P2-QLe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="QFq-bD-9Hn">
+                    <connections>
+                        <action selector="dismissKeyboard:" destination="MZ0-gQ-zzQ" id="yfH-xU-3WX"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2681" y="936"/>
         </scene>
@@ -326,33 +334,38 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="eight-ball" translatesAutoresizingMaskIntoConstraints="NO" id="bhT-Ll-HNT">
                                 <rect key="frame" x="0.0" y="124" width="320" height="320"/>
+                                <gestureRecognizers/>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Shake For Chance" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="T7Y-FR-PQk">
-                                <rect key="frame" x="100" y="234" width="120" height="100"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tap for chance" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OLL-FV-BE9">
+                                <rect key="frame" x="89" y="273" width="141" height="21"/>
+                                <gestureRecognizers/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                                <nil key="highlightedColor"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="ect-EH-oKI" appends="YES" id="TGT-7m-xxx"/>
+                                </connections>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="T7Y-FR-PQk" firstAttribute="leading" secondItem="r65-qj-2dX" secondAttribute="leadingMargin" constant="84" id="0X2-6j-fqZ"/>
                             <constraint firstAttribute="trailing" secondItem="bhT-Ll-HNT" secondAttribute="trailing" id="2qF-Tj-rP0"/>
-                            <constraint firstItem="T7Y-FR-PQk" firstAttribute="centerY" secondItem="bhT-Ll-HNT" secondAttribute="centerY" id="CGB-z1-IrE"/>
                             <constraint firstItem="bhT-Ll-HNT" firstAttribute="leading" secondItem="r65-qj-2dX" secondAttribute="leading" id="GQR-qu-Q7x"/>
-                            <constraint firstItem="hoH-wK-wgh" firstAttribute="top" secondItem="T7Y-FR-PQk" secondAttribute="bottom" constant="185" id="Wx7-t2-HX4"/>
                             <constraint firstItem="bhT-Ll-HNT" firstAttribute="centerY" secondItem="r65-qj-2dX" secondAttribute="centerY" id="gaa-lY-tZr"/>
-                            <constraint firstItem="T7Y-FR-PQk" firstAttribute="centerX" secondItem="bhT-Ll-HNT" secondAttribute="centerX" id="jtm-fG-9rd"/>
                             <constraint firstItem="hoH-wK-wgh" firstAttribute="top" secondItem="bhT-Ll-HNT" secondAttribute="bottom" constant="75" id="pLw-Jf-F9o"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Bingo" image="eight-ball－20" id="6zf-XS-pCI"/>
                     <connections>
-                        <outlet property="getChance" destination="T7Y-FR-PQk" id="WZp-bo-xAp"/>
+                        <outlet property="getChance" destination="OLL-FV-BE9" id="hJj-q7-THj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0XU-di-3nV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="ect-EH-oKI">
+                    <connections>
+                        <action selector="touchForChange:" destination="pgU-w4-9lN" id="jCJ-dk-bdz"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2040" y="2357"/>
         </scene>

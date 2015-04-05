@@ -24,6 +24,7 @@
     
     PartyTabBarViewController *tabBar = (PartyTabBarViewController *)self.tabBarController;
     membersList = [NSKeyedUnarchiver unarchiveObjectWithData:[(Party *)tabBar.partyItem members]];
+    self.getChance.UserInteractionEnabled = true;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -77,13 +78,45 @@
     // Choose a different answer at random
     NSLog(@"new value");
     self.getChance.text = membersList[arc4random_uniform([membersList count])];
-    
+    NSLog(@"get value is %@", self.getChance.text);
     // Animate the view so the answer slowly appears
-    [UIView animateWithDuration:2.0 animations:^{
+    [UIView animateWithDuration:0.5 animations:^{
         self.getChance.alpha = 1.0;
     }];
 }
 
 
+//- (BOOL)canBecomeFirstResponder {
+//    return NO;
+//}
 
+//- (BOOL)canPerformAction:(SEL)action withSender:(id)sender
+//{
+//    if (action == @selector(copy:) || action == @selector(selectAll:) || action == @selector(paste:))
+//        return NO;
+//    return [super canPerformAction:action withSender:sender];
+//}
+
+//- (BOOL)canPerformAction:(SEL)action withSender:(id)sender
+//{
+//    if (action == @selector(paste:))
+//        return NO;
+//    if (action == @selector(select:))
+//        return NO;
+//    if (action == @selector(selectAll:))
+//        return NO;
+//    return [super canPerformAction:action withSender:sender];
+//}
+//-(BOOL)canPerformAction:(SEL)action withSender:(id)sender
+//{
+//    [UIMenuController sharedMenuController].menuVisible = NO;
+//    return NO;
+//}
+
+- (IBAction)touchForChange:(id)sender {
+    NSLog(@"new value");
+    self.getChance.text = membersList[arc4random_uniform([membersList count])];
+    // self.getChance.userInteractionEnabled = NO;
+    NSLog(@"get value is %@", self.getChance.text);
+}
 @end
