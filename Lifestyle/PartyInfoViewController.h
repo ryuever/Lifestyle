@@ -16,6 +16,7 @@
 @property (strong, nonatomic) IBOutlet UITextField *totalCost;
 @property (strong, nonatomic) IBOutlet UITextField *date;
 @property (strong, nonatomic) IBOutlet UILabel *averageCost;
+@property (weak, nonatomic) IBOutlet UILabel *memberNumber;
 
 - (IBAction)back:(id)sender;
 - (IBAction)editInfo:(id)sender;

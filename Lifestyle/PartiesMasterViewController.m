@@ -138,9 +138,10 @@
         [self.partiesList removeObjectAtIndex:indexPath.row];
         [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        [self.partiesList insertObject:@"insert" atIndex:indexPath.row];
-        [tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-    }   
+        NSLog(@"wip for insertation under edit mode");
+//        [self.partiesList insertObject:@"insert" atIndex:indexPath.row];
+//        [tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    }
 }
 
 -(IBAction)backToHome:(id)sender

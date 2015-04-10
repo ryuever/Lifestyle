@@ -40,7 +40,7 @@
     // Do any additional setup after loading the view.
     PartyTabBarViewController *tabBar = (PartyTabBarViewController *)self.tabBarController;
     if (tabBar.partyItem) {
-        NSLog(@"from info view controller : %@", [(Party *)tabBar.partyItem date]);
+        // NSLog(@"from info view controller : %@", [(Party *)tabBar.partyItem date]);
         self.partyDescription.text = [(Party *)tabBar.partyItem partyDescription];
         self.location.text = [(Party *)tabBar.partyItem location];
         self.date.text = [(Party *)tabBar.partyItem date];
@@ -55,10 +55,8 @@
         
         membersList = [NSKeyedUnarchiver unarchiveObjectWithData:(NSData *)[(Party *)tabBar.partyItem members]];
         
-        NSLog(@"total cost is %@", self.totalCost.text);
-        NSLog(@"Length of member list is %lu", (unsigned long)[membersList count]);
         NSInteger tc = [self.totalCost.text integerValue];
-        NSLog(@"tc is %ld", tc);
+        self.memberNumber.text = [@([membersList count]) stringValue];
         NSInteger aveCost = tc / [membersList count];
         if (tc == 0) {
             self.averageCost.text = @"#";

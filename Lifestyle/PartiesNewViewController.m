@@ -83,16 +83,17 @@
     NSManagedObject *newParty = [NSEntityDescription insertNewObjectForEntityForName:@"PartiesList" inManagedObjectContext:context];
     
     
-    NSMutableArray * membersList = [NSMutableArray arrayWithArray:@[@"liu", @"yu"]];
-    NSLog(@"in parties new : membersList %@ ", membersList);
-    [membersList addObject:@"ma"];
-    NSLog(@"in parties new : membersList %@ ", membersList);
+//    NSMutableArray * membersList = [NSMutableArray arrayWithArray:@[@"liu", @"yu"]];
+//    NSLog(@"in parties new : membersList %@ ", membersList);
+//    [membersList addObject:@"ma"];
+//    NSLog(@"in parties new : membersList %@ ", membersList);
+    NSMutableArray *membersList;
     NSData *arrayData = [NSKeyedArchiver archivedDataWithRootObject:membersList];
     
     [newParty setValue:self.descriptionField.text forKey:@"partyDescription"];
     [newParty setValue:self.dateField.text forKey:@"date"];
     [newParty setValue:self.locationField.text forKey:@"location"];
-    [newParty setValue:@"3000" forKey:@"totalCost"];
+    [newParty setValue:@"0" forKey:@"totalCost"];
     [newParty setValue:arrayData forKey:@"members"];
  
     NSError *error = nil;
