@@ -19,14 +19,36 @@
 @end
 
 @implementation PartyMembersViewController
+- (void)awakeFromNib {
+    
+    NSLog(@"in party info");
+    [[NSNotificationCenter defaultCenter]
+     addObserver:self
+     selector:@selector(addNewMemberFinishedNotification:)
+     name:kAddNewMemberFinishedNotification
+     object:nil];
+    
+    [super awakeFromNib];
+}
+
+- (void)addNewMemberFinishedNotification:(NSNotification*)notification
+{
+    NSLog(@"notification of new member finised comes to party member view controll");
+    [self.tableView reloadData];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    // membersList = [NSMutableArray arrayWithArray:@[@"liu", @"yu", @"ma"]];
     PartyTabBarViewController *tabBar = (PartyTabBarViewController *)self.tabBarController;
     membersList = [NSKeyedUnarchiver unarchiveObjectWithData:[(Party *)tabBar.partyItem members]];
-
+    NSLog(@"members list is %@", membersList);
+    
+    if (!membersList) {
+        membersList = [[NSMutableArray alloc] init];
+        if ([membersList count] == 0) {
+        }
+    }
+    
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     UIBarButtonItem *customBarItem = [[UIBarButtonItem alloc]

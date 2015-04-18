@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "PartyNewMemberViewController.h"
+#define kAddNewMemberFinishedNotification      @"AddNewMemberFinished"
+
 @interface PartyMembersViewController : UITableViewController
 - (IBAction)backToPartiesList:(id)sender;
 - (IBAction)addNewMember:(id)sender;

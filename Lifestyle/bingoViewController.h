@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "PartyTabBarViewController.h"
+#define kAddNewMemberFinishedNotification      @"AddNewMemberFinished"
 
 @interface bingoViewController : UIViewController
 // @property (strong, nonatomic) IBOutlet UITextView *getChance;

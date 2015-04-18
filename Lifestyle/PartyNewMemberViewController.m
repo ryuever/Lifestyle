@@ -16,17 +16,13 @@
 @end
 
 @implementation PartyNewMemberViewController
-//@synthesize partyNewMember;
-//@synthesize labelString;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-//    NSLog(@"%@", self.labelString);
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (NSManagedObjectContext *)managedObjectContext {
@@ -39,12 +35,8 @@
 }
 
 - (IBAction)save:(id)sender {
-    NSLog(@"save a new member in PartyNewMemberViewController");
     NSManagedObjectContext *context = [self managedObjectContext];
-    NSLog(@"memberList is %@", self.partyNewMember);
     [self.partyNewMember addObject:self.memberField.text];
-    NSLog(@"membersList is %@", self.partyNewMember);
-
     NSData *arrayData = [NSKeyedArchiver archivedDataWithRootObject:self.partyNewMember];
     [self.partyNewItem setValue:arrayData forKey:@"members"];
     NSError *error = nil;

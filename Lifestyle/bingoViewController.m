@@ -17,6 +17,24 @@
 @end
 
 @implementation bingoViewController
+- (void)awakeFromNib {
+    
+    NSLog(@"in party info");
+    [[NSNotificationCenter defaultCenter]
+     addObserver:self
+     selector:@selector(addNewMemberFinishedNotification:)
+     name:kAddNewMemberFinishedNotification
+     object:nil];
+    
+    [super awakeFromNib];
+}
+
+- (void)addNewMemberFinishedNotification:(NSNotification*)notification
+{
+    NSLog(@"notification of new member finised comes to party member view controll");
+    [self viewDidLoad];
+}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];

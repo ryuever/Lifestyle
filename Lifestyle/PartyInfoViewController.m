@@ -57,7 +57,13 @@
         
         NSInteger tc = [self.totalCost.text integerValue];
         self.memberNumber.text = [@([membersList count]) stringValue];
-        NSInteger aveCost = tc / [membersList count];
+        NSInteger aveCost;
+        if ([membersList count]) {
+            aveCost = tc / [membersList count];
+        }else{
+            aveCost = 0;
+        }
+
         if (tc == 0) {
             self.averageCost.text = @"#";
         }else{
