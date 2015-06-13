@@ -12,11 +12,14 @@
 @interface PartyInfoViewController : UIViewController
 
 @property (strong, nonatomic) IBOutlet UITextField *partyDescription;
-@property (strong, nonatomic) IBOutlet UITextField *location;
 @property (strong, nonatomic) IBOutlet UITextField *totalCost;
 @property (strong, nonatomic) IBOutlet UITextField *date;
 @property (strong, nonatomic) IBOutlet UILabel *averageCost;
 @property (weak, nonatomic) IBOutlet UILabel *memberNumber;
+@property (strong, nonatomic) IBOutlet UITextView *location;
+@property (strong, nonatomic) IBOutlet UITextView *registration;
+@property (strong, nonatomic) IBOutlet UITextField *meetingPlace;
+
 
 - (IBAction)back:(id)sender;
 - (IBAction)editInfo:(id)sender;

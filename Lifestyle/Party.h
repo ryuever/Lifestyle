@@ -20,7 +20,9 @@
 @property (strong,nonatomic) NSString* date;
 @property (strong,nonatomic) NSString* totalCost;
 @property (strong,nonatomic) NSString* location;
+@property (strong,nonatomic) NSString* registration;
 @property (strong,nonatomic) NSMutableArray* members;
+@property (strong,nonatomic) NSString* meetingPlace;
 // @property (strong,nonatomic) NSString* location;
 
 - (id)initWithDescription:(NSString*)description date:(NSString*)date totalCost:(NSString*)totalCost members:(NSMutableArray*)members;

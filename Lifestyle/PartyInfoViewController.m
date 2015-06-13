@@ -45,13 +45,15 @@
         self.location.text = [(Party *)tabBar.partyItem location];
         self.date.text = [(Party *)tabBar.partyItem date];
         self.totalCost.text = [(Party *)tabBar.partyItem totalCost];
+        self.registration.text = [(Party *)tabBar.partyItem registration];
+        self.meetingPlace.text = [(Party *)tabBar.partyItem meetingPlace];
         // membersList = [(Party *)tabBar.partyItem members];
         
         // disable text field
         self.partyDescription.enabled = NO;
         self.totalCost.enabled = NO;
         self.date.enabled = NO;
-        self.location.enabled = NO;
+        self.location.editable = NO;
         
         membersList = [NSKeyedUnarchiver unarchiveObjectWithData:(NSData *)[(Party *)tabBar.partyItem members]];
         

@@ -90,11 +90,14 @@
     NSMutableArray *membersList;
     NSData *arrayData = [NSKeyedArchiver archivedDataWithRootObject:membersList];
     
+    NSLog(@"from new member");
     [newParty setValue:self.descriptionField.text forKey:@"partyDescription"];
     [newParty setValue:self.dateField.text forKey:@"date"];
     [newParty setValue:self.locationField.text forKey:@"location"];
     [newParty setValue:@"0" forKey:@"totalCost"];
     [newParty setValue:arrayData forKey:@"members"];
+    [newParty setValue:self.registrationField.text forKey:@"registration"];
+    [newParty setValue:self.meetingPlaceField.text forKey:@"meetingPlace"];
  
     NSError *error = nil;
     // Save the object to persistent store
@@ -124,5 +127,8 @@
     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
+- (IBAction)dismissKeyboard:(id)sender {
+    [self.view endEditing:NO];
+}
 
 @end

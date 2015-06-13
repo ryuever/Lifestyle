@@ -14,8 +14,10 @@
 
 @property (weak,nonatomic) IBOutlet UITextField *descriptionField;
 @property (weak,nonatomic) IBOutlet UITextField *dateField;
-@property (weak, nonatomic) IBOutlet UITextField *locationField;
-
+@property (weak, nonatomic) IBOutlet UITextView *locationField;
+@property (weak, nonatomic) IBOutlet UITextView *registrationField;
+@property (weak, nonatomic) IBOutlet UITextView *meetingPlaceField;
 - (IBAction)addDidFinished:(id)sender;
 - (IBAction)cancel:(id)sender;
+- (IBAction)dismissKeyboard:(id)sender;
 @end
