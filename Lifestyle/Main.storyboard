@@ -544,6 +544,7 @@
                     <connections>
                         <outlet property="dateField" destination="mMd-0G-R1k" id="EAp-JX-ou2"/>
                         <outlet property="descriptionField" destination="4tu-n0-APu" id="eub-0Q-WXV"/>
+                        <outlet property="keyboardHeight" destination="b0v-uH-p5f" id="Ytx-eL-Wq9"/>
                         <outlet property="locationField" destination="1Wx-EW-G8k" id="OT4-Ty-6at"/>
                         <outlet property="meetingPlaceField" destination="Wxr-Td-LE5" id="IMp-hE-WUT"/>
                         <outlet property="registrationField" destination="DXo-jg-FxM" id="OOc-7A-sxR"/>

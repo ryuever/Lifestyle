@@ -17,6 +17,9 @@
 @property (weak, nonatomic) IBOutlet UITextView *locationField;
 @property (weak, nonatomic) IBOutlet UITextView *registrationField;
 @property (weak, nonatomic) IBOutlet UITextView *meetingPlaceField;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *keyboardHeight;
+
 - (IBAction)addDidFinished:(id)sender;
 - (IBAction)cancel:(id)sender;
 - (IBAction)dismissKeyboard:(id)sender;
